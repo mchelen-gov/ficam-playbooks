@@ -220,7 +220,7 @@
   longName: NIST SP 800-116r1 Guidelines for the Use of PIV Credentials in Facility Access (PDF, June 2018)
   playbook: PACS, Arch
   url: https://csrc.nist.gov/publications/detail/sp/800-116/rev-1/final
-  description: This guideline provides resources for using PIV credentials in facility access; enabling federal agencies to operate as government-wide interoperable enterprises. This guideline covers the risk-based strategy to select appropriate PIV authentication mechanisms as expressed within FIPS 201.
+  description: This guideline provides resources for using PIV credentials in facility access, enabling federal agencies to operate as government-wide interoperable enterprises. This guideline covers the risk-based strategy to select appropriate PIV authentication mechanisms as expressed within FIPS 201.
 
   shortName: NIST SP 800-122
   longName: NIST SP 800-122: Guide for Protecting the Confidentiality of Personally Identifiable Information (PII) (PDF. April 2010)
@@ -244,7 +244,7 @@
   longName: NIST SP 800-171, Revision 2, Protecting Controlled Unclassified Information in Nonfederal Information Systems and Organizations, February 2020.
   playbook: PACS
   url: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171r2.pdf
-  description: This guideline provides federal agencies with recommended security requirements6 for protecting the confidentiality of CUI: (1) when the CUI is resident in a nonfederal system and organization; (2) when the nonfederal organization is not collecting or maintaining information on behalf of a federal agency or using or operating a system on behalf of an agency;7 and (3) where there are no specific safeguarding requirements for protecting the confidentiality of CUI prescribed by the authorizing law, regulation, or governmentwide policy for the CUI category listed in the CUI Registry.
+  description: This guideline provides federal agencies with recommended security requirements6 for protecting the confidentiality of CUI: (1) when the CUI is resident in a nonfederal system and organization, (2) when the nonfederal organization is not collecting or maintaining information on behalf of a federal agency or using or operating a system on behalf of an agency,7 and (3) where there are no specific safeguarding requirements for protecting the confidentiality of CUI prescribed by the authorizing law, regulation, or governmentwide policy for the CUI category listed in the CUI Registry.
 
   shortName: NIST SP 800-205
   longName: NIST SP 800-205: Attribute Considerations for Access Control Systems (PDF, June 2019)
