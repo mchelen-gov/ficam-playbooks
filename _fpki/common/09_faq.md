@@ -320,7 +320,7 @@ The following steps will allow Firefox to use the underlying operating system tr
 
 ## Why is Adobe indicating a document's signature is invalid?
 
-We reported a bug (ADC-4331816) to Adobe that prevents some PIV card signatures from validating to the Federal Common Policy CA G2 due to issues processing [link certificates](#why-arent-some-entrust-federal-shared-service-provider-issued-piv-credential-certificates-chaining-to-fcpca-g2).  While Adobe intends on addressing the issue in a future product release (timing to be determined), setting the following registry configuration will also remedy the issue:
+We reported a bug (ADC-4331816) to Adobe that prevents some PIV card signatures from validating to the Federal Common Policy CA G2 due to issues processing [link certificates](#why-arent-some-entrust-federal-shared-service-provider-issued-piv-credential-certificates-chaining-to-fcpca-g2).  While Adobe intends on correcting the issue for all users in a future product release (timing to be determined), a test patch can be accessed by setting the following registry configuration:
 
 - Key: HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cASPKI
 - Name: bADC4326651
