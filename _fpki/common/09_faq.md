@@ -27,6 +27,7 @@ sidenav: fpkicommon
 - [How do I configure my unmanaged macOS device to trust the new Federal Common Policy CA G2?](#how-do-i-configure-my-unmanaged-macos-device-to-trust-the-new-federal-common-policy-ca-g2) 
 - [How do I configure my unmanaged iOS device to trust the new Federal Common Policy CA G2?](#how-do-i-configure-my-unmanaged-ios-device-to-trust-the-new-federal-common-policy-ca-g2) 
 - [How do I configure the Firefox web browser to trust the new Federal Common Policy CA G2?](#how-do-i-configure-the-firefox-web-browser-to-trust-the-new-federal-common-policy-ca-g2)
+- [Why is Adobe indicating a document's signature is invalid?](#why-is-adobe-indicating-a-documents-signature-is-invalid)
 
 
 
@@ -317,3 +318,37 @@ The following steps will allow Firefox to use the underlying operating system tr
 <br>
 <a href="../../../assets/fpki/configure-firefox.gif" target="_blank" rel="noopener noreferrer"><img src="../../../assets/fpki/configure-firefox.gif" height="90%" width="90%" alt="A video that shows the steps to configure the Firefox web browser"></a>
 
+## Why is Adobe indicating a document's signature is invalid?
+
+We reported a bug (ADC-4331816) to Adobe that prevents some PIV card signatures from validating to the Federal Common Policy CA G2 due to issues processing [link certificates](#why-arent-some-entrust-federal-shared-service-provider-issued-piv-credential-certificates-chaining-to-fcpca-g2).  While Adobe intends on addressing the issue in a future product release (timing to be determined), setting the following registry configuration will also remedy the issue:
+
+- Key: HKEY_CURRENT_USER\Software\Adobe\Acrobat Reader\DC\Security\cASPKI\cASPKI
+- Name: bADC4326651
+- Type: REG_DWORD 
+- Data: 0
+
+If the user's workstation also has Adobe Acrobat DC (formerly known as "Acrobat Pro"), also apply the following registry setting:
+
+- Key: HKEY_CURRENT_USER\Software\Adobe\Adobe Acrobat\DC\Security\cASPKI\cASPKI  
+- Name: bADC4326651
+- Type: REG_DWORD 
+- Data: 0
+
+The settings above can be distributed across the enterprise through Group Policy Objects. For example, to create a GPO for Adobe Reader DC:
+
+{% include alert-warning.html content="You must have Enterprise Administrator privileges for the Domain to use these procedures. The commands must be run from an agency Domain Controller." %}
+
+1. Navigate to **Server Manager**.
+1. Select **Tools**.
+1. Select **Group Policy Management** from the drop-down list.
+1. Right-click your desired domain(s), and select **Create a GPO in this domain, and Link it here**.
+1. Enter a GPO **Name**, and click **OK**.
+1. Right-click the newly created GPO and click **Edit**.
+1. Navigate to **Preferences** > **Windows Settings** > **Registry** and create a new **Registry Item**.  
+1. Configure the registry settings described above.
+1. Close the **Group Policy Management** window.
+1. Wait for clients to consume the new policy.
+1. (*Optional*) To force client consumption, click **Start**, type **cmd**, press **Enter**, and run the following command:
+    ```
+          gpupdate /force
+    ```
