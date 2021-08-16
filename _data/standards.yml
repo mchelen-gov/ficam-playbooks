@@ -36,7 +36,7 @@
 
 - category: Policies
   shortName:  Executive Order 13636 and PPD-21
-  longName: Executive Order 13636 and PPD-21 - “DHS Factsheet: Improving Critical Infrastructure Cybersecurity and Critical Infrastructure Security and Resilience”), March 2013.
+  longName: Executive Order 13636 and PPD-21 - DHS Factsheet: Improving Critical Infrastructure Cybersecurity and Critical Infrastructure Security and Resilience, March 2013.
   playbook: PACS
   url: https://www.dhs.gov/publication/eo-13636-ppd-21-fact-sheet
   description: These policies reinforce the need for holistic thinking about security and risk management.  Implementation of the EO and PPD will drive action toward system and network security and resiliency, and will also enhance the efficiency and effectiveness of the U.S. government’s work to secure critical infrastructure and make it more resilient. 
